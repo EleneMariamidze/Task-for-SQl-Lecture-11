@@ -1,0 +1,26 @@
+CREATE TABLE Taskforsql (
+    id INT NOT NULL AUTO_INCREMENT,
+    name VARCHAR,
+    salary DECIMAL,
+    age INT)
+;  
+INSERT INTO Taskforsql (name, salary, age) VALUES 
+ ('Gio', 5000, 28), 
+('Eka', 5200, 30), 
+('Nino', 3500, 27), 
+('Dato', 3700, 27), 
+('Luka', 2000, 23), 
+('Salome', 2500, 25), 
+('Keti', 2100, 24),
+ ('Shota', 3000, 25)
+; 
+SELECT name from Taskforsql where salary > 3000;
+
+CREATE UNIQUE INDEX name_indexes
+ON Taskforsql ('name');
+
+Explain analyze SELECT name FROM  Taskforsql where salary > 3000;
+
+DROP INDEX name_index;
+
+Explain analyze SELECT name FROM  Taskforsql where salary > 3000;
